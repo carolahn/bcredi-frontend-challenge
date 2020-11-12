@@ -24,5 +24,6 @@ export const FormWrapper = styled.div`
     font-size: 16px;
     line-height: 24px;
     color: var(--base-color-warm-grey);
+    margin: 6px auto 0px auto;
   }
 `;

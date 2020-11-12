@@ -12,6 +12,11 @@ export const StyledForm = styled.form`
     line-height: 18px;
     color: var(--base-color-warm-grey);
     text-align: left;
+    margin-top: 23px;
+  }
+
+  .register__label--small {
+    width: 148px;
   }
 
   .register__message {
@@ -29,4 +34,16 @@ export const StyledInput = styled.input`
   margin: 7px auto 5px auto;
   border-radius: 3px;
   padding-left: 14px;
+  outline: none;
+  appearance: none;
+`;
+
+export const StyledInputSmall = styled.input`
+  height: 48px;
+  width: 148px;
+  margin: 7px auto 5px auto;
+  border-radius: 3px;
+  padding-left: 14px;
+  outline: none;
+  appearance: none;
 `;

@@ -26,6 +26,20 @@ export const StyledForm = styled.form`
     color: var(--base-color-wild-watermelon);
     text-align: left;
   }
+
+  .register__container {
+    width: 320px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .register__small-input-container {
+    width: 148px;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const StyledInput = styled.input`

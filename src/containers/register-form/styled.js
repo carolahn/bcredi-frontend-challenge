@@ -6,11 +6,13 @@ export const FormWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 
   .form__container {
     width: 320px;
-    height: 100vh;
+    margin-top: 94px;
+    /* height: 100vh; */
+    background-color: yellow;
   }
 
   .form__title {

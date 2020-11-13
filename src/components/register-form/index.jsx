@@ -173,12 +173,12 @@ const RegisterForm = ({
         )}
       </div>
 
-      <CheckboxContainer>
-        {/* <label className="register__label">CheckBox</label> */}
+      <CheckboxContainer
+        style={{ border: `1px solid ${!errors.agree ? "#e6e6e6" : "#ff5863"}` }}
+      >
         <input
           width="320px"
           className="register__input--checkbox"
-          // placeholder="Cadastre uma senha"
           name="agree"
           type="checkbox"
           value={values.agree}
@@ -189,13 +189,6 @@ const RegisterForm = ({
                 applyMask(value, "agree");
                 return value !== false || "Confirme os termos de uso";
               },
-              // pattern: (value) => {
-              //   applyMask(value, "password");
-              //   return (
-              //     value.length > 7 ||
-              //     "A senha deve conter, no mínimo, 8 caracteres"
-              //   );
-              // },
             },
           })}
           style={{

@@ -4,12 +4,14 @@ import {
   StyledInputSmall,
   StyledMessage,
   CheckboxContainer,
+  StyledButton,
 } from "./styled";
 import { cpfMask, birthMask } from "./masks";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faLock } from "@fortawesome/free-solid-svg-icons";
 const eye = <FontAwesomeIcon icon={faEye} />;
+const lock = <FontAwesomeIcon icon={faLock} />;
 
 const RegisterForm = ({
   values,
@@ -162,7 +164,9 @@ const RegisterForm = ({
               color: `${!errors.password ? "#333333" : "#ff5863"}`,
             }}
           />
-          <i onClick={togglePassword}>{eye}</i>
+          <i className="register__icon--eye" onClick={togglePassword}>
+            {eye}
+          </i>
         </div>
         {errors.password && (
           <div className="register__message">{errors.password.message}</div>
@@ -211,7 +215,9 @@ const RegisterForm = ({
         )}
       </CheckboxContainer>
 
-      <button>Cadastrar</button>
+      <StyledButton>
+        <i className="register__icon--lock">{lock}</i>Cadastrar
+      </StyledButton>
     </StyledForm>
   );
 };

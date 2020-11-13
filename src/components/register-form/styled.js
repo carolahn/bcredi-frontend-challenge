@@ -53,14 +53,14 @@ export const StyledForm = styled.form`
     position: relative;
     display: flex;
   }
-  i {
+  i.register__icon--eye {
     position: absolute;
     top: 38%;
     right: 5%;
     color: var(--base-color-warm-grey);
   }
 
-  i:hover {
+  i.register__icon--eye:hover {
     color: var(--base-color-dark-charcoal);
     cursor: pointer;
   }
@@ -118,5 +118,23 @@ export const CheckboxContainer = styled.div`
   .register__checkbox-label > a {
     color: #4c8afe;
     text-decoration: none;
+  }
+`;
+
+export const StyledButton = styled.button`
+  width: 320px;
+  height: 48px;
+  background-color: #4c8afe;
+  border: none;
+  border-radius: 3px;
+  color: var(--base-color-white);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+
+  i.register__icon--lock {
+    position: absolute;
+    left: 31px;
   }
 `;

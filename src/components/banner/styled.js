@@ -48,4 +48,8 @@ export const BannerWrapper = styled.div`
     font-size: 16px;
     line-height: 24px;
   }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;

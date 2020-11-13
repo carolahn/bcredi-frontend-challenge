@@ -67,4 +67,8 @@ export const FormWrapper = styled.div`
       top: 15px;
     }
   }
+
+  @media (max-width: 600px) {
+    width: 100vw;
+  }
 `;

@@ -6,6 +6,12 @@ export const StyledForm = styled.form`
   justify-content: center;
   align-items: center;
 
+  .register__input-wrapper {
+    position: relative;
+    text-align: left;
+    margin-top: 23px;
+  }
+
   .register__label {
     width: 320px;
     font-size: 14px;
@@ -25,6 +31,8 @@ export const StyledForm = styled.form`
     line-height: 18px;
     color: var(--base-color-wild-watermelon);
     text-align: left;
+    position: absolute;
+    /* top: ${(props) => props.top || "78px"}; */
   }
 
   .register__container {
@@ -39,6 +47,7 @@ export const StyledForm = styled.form`
     width: 148px;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
 
   .register__input--toggle-eye {
@@ -60,7 +69,6 @@ export const StyledForm = styled.form`
 
 export const StyledInput = styled.input`
   height: 48px;
-  /* width: 320px; */
   width: ${(props) => props.width};
   margin: 7px auto 5px auto;
   border-radius: 3px;
@@ -73,4 +81,9 @@ export const StyledInput = styled.input`
   input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px white inset !important;
   }
+`;
+
+export const StyledMessage = styled.div`
+  position: absolute;
+  top: ${(props) => props.top || "78px"};
 `;

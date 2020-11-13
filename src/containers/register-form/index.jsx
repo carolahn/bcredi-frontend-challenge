@@ -5,6 +5,7 @@ import RegisterForm from "../../components/register-form";
 
 const RegisterFormContainer = () => {
   const [values, setValues] = useState({});
+  const [showPassword, setShowPassword] = useState(false);
   const { handleSubmit, register, errors } = useForm();
 
   const onSubmit = (values) => {
@@ -17,6 +18,10 @@ const RegisterFormContainer = () => {
 
   const applyMask = (value, key) => {
     setValues({ ...values, [key]: value });
+  };
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -35,6 +40,8 @@ const RegisterFormContainer = () => {
           formErrors={{ register, handleSubmit, errors }}
           handleOnChange={handleOnChange}
           applyMask={applyMask}
+          togglePassword={togglePassword}
+          showPassword={showPassword}
         />
       </div>
     </FormWrapper>

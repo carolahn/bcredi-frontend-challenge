@@ -25,6 +25,8 @@ List main libraries, frameworks used including versions (React, Angular etc...)
 
 - React (16.8.0)
 - Styled-components (5.2.1)
+- React-hook-form (6.11.0)
+- fontawesome (1.2.32)
 
 ### Prerequisites
 

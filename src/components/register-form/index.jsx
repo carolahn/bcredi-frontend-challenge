@@ -1,6 +1,9 @@
-import RegisterFormContainer from "../../containers/register-form";
 import { StyledForm, StyledInput, StyledInputSmall } from "./styled";
 import { cpfMask, birthMask } from "./masks";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+const eye = <FontAwesomeIcon icon={faEye} />;
 
 const RegisterForm = ({
   values,
@@ -8,6 +11,8 @@ const RegisterForm = ({
   formErrors: { register, handleSubmit, errors },
   handleOnChange,
   applyMask,
+  togglePassword,
+  showPassword,
 }) => {
   return (
     <StyledForm name="register" onSubmit={handleSubmit(onSubmit)}>
@@ -115,35 +120,38 @@ const RegisterForm = ({
       </div>
 
       <label className="register__label">Senha</label>
-      <StyledInput
-        width="320px"
-        className="register__input"
-        placeholder="Cadastre uma senha"
-        name="password"
-        type="password"
-        value={values.password}
-        onChange={handleOnChange}
-        ref={register({
-          required: (value) => {
-            applyMask(value, "password");
-            return value !== "" || "Cadastre uma senha";
-          },
-          pattern: (value) => {
-            applyMask(value, "password");
-            return (
-              value.length > 7 || "A senha deve conter, no mínimo, 8 caracteres"
-            );
-          },
-        })}
-        style={{
-          border: `1px solid ${!errors.password ? "#e6e6e6" : "#ff5863"}`,
-          color: `${!errors.password ? "#333333" : "#ff5863"}`,
-        }}
-      />
+      <div className="register__input--toggle-eye">
+        <StyledInput
+          width="320px"
+          className="register__input"
+          placeholder="Cadastre uma senha"
+          name="password"
+          type={showPassword ? "text" : "password"}
+          value={values.password}
+          onChange={handleOnChange}
+          ref={register({
+            required: (value) => {
+              applyMask(value, "password");
+              return value !== "" || "Cadastre uma senha";
+            },
+            pattern: (value) => {
+              applyMask(value, "password");
+              return (
+                value.length > 7 ||
+                "A senha deve conter, no mínimo, 8 caracteres"
+              );
+            },
+          })}
+          style={{
+            border: `1px solid ${!errors.password ? "#e6e6e6" : "#ff5863"}`,
+            color: `${!errors.password ? "#333333" : "#ff5863"}`,
+          }}
+        />
+        <i onClick={togglePassword}>{eye}</i>
+      </div>
       {errors.password && (
         <div className="register__message">{errors.password.message}</div>
       )}
-
       <button>Cadastrar</button>
     </StyledForm>
   );

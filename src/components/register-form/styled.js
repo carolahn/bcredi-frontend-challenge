@@ -40,6 +40,22 @@ export const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
   }
+
+  .register__input--toggle-eye {
+    position: relative;
+    display: flex;
+  }
+  i {
+    position: absolute;
+    top: 38%;
+    right: 5%;
+    color: var(--base-color-warm-grey);
+  }
+
+  i:hover {
+    color: var(--base-color-dark-charcoal);
+    cursor: pointer;
+  }
 `;
 
 export const StyledInput = styled.input`
@@ -58,13 +74,3 @@ export const StyledInput = styled.input`
     -webkit-box-shadow: 0 0 0 30px white inset !important;
   }
 `;
-
-// export const StyledInputSmall = styled.input`
-//   height: 48px;
-//   width: 148px;
-//   margin: 7px auto 5px auto;
-//   border-radius: 3px;
-//   padding-left: 14px;
-//   outline: none;
-//   appearance: none;
-// `;

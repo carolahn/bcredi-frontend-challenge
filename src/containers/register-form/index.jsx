@@ -44,6 +44,13 @@ const RegisterFormContainer = () => {
           showPassword={showPassword}
         />
       </div>
+      <div className="form__footer--min-height">
+        <div className="form__footer">
+          <p>
+            Já fiz o meu cadastro. <a href="#entrar">Entrar agora.</a>
+          </p>
+        </div>
+      </div>
     </FormWrapper>
   );
 };

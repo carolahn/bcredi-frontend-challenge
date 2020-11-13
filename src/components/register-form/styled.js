@@ -32,7 +32,6 @@ export const StyledForm = styled.form`
     color: var(--base-color-wild-watermelon);
     text-align: left;
     position: absolute;
-    /* top: ${(props) => props.top || "78px"}; */
   }
 
   .register__container {
@@ -86,4 +85,38 @@ export const StyledInput = styled.input`
 export const StyledMessage = styled.div`
   position: absolute;
   top: ${(props) => props.top || "78px"};
+  left: ${(props) => props.left || "0px"};
+`;
+
+export const CheckboxContainer = styled.div`
+  height: 56px;
+  width: 320px;
+  margin: 31px auto 48px auto;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+  padding-left: 14px;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  .register__input--checkbox {
+    width: 24px;
+    height: 24px;
+    margin-top: 16px;
+  }
+
+  .register__checkbox-label {
+    width: 267px;
+    height: 40px;
+    margin: 7px 5px 9px 12px;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--base-color-pinkish-grey);
+  }
+
+  .register__checkbox-label > a {
+    color: #4c8afe;
+    text-decoration: none;
+  }
 `;

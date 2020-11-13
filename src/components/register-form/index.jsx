@@ -3,6 +3,7 @@ import {
   StyledInput,
   StyledInputSmall,
   StyledMessage,
+  CheckboxContainer,
 } from "./styled";
 import { cpfMask, birthMask } from "./masks";
 
@@ -167,6 +168,49 @@ const RegisterForm = ({
           <div className="register__message">{errors.password.message}</div>
         )}
       </div>
+
+      <CheckboxContainer>
+        {/* <label className="register__label">CheckBox</label> */}
+        <input
+          width="320px"
+          className="register__input--checkbox"
+          // placeholder="Cadastre uma senha"
+          name="agree"
+          type="checkbox"
+          value={values.agree}
+          onChange={handleOnChange}
+          ref={register({
+            validate: {
+              required: (value) => {
+                applyMask(value, "agree");
+                return value !== false || "Confirme os termos de uso";
+              },
+              // pattern: (value) => {
+              //   applyMask(value, "password");
+              //   return (
+              //     value.length > 7 ||
+              //     "A senha deve conter, no mínimo, 8 caracteres"
+              //   );
+              // },
+            },
+          })}
+          style={{
+            border: `1px solid ${!errors.agree ? "#e6e6e6" : "#ff5863"}`,
+            color: `${!errors.agree ? "#333333" : "#ff5863"}`,
+          }}
+        />
+        <span className="register__checkbox-label">
+          Li e estou de acordo com a{" "}
+          <a href="#politica-de-privacidade">Política de Privacidade</a> e a{" "}
+          <a href="#politica-de-uso">Política de Uso de Informações</a>.
+        </span>
+        {errors.agree && (
+          <StyledMessage className="register__message" top="59px" left="-1px">
+            {errors.agree.message}
+          </StyledMessage>
+        )}
+      </CheckboxContainer>
+
       <button>Cadastrar</button>
     </StyledForm>
   );

@@ -15,7 +15,7 @@ const RegisterFormContainer = () => {
     setValues({ ...values, [name]: value });
   };
 
-  const handleMask = (value, key) => {
+  const applyMask = (value, key) => {
     setValues({ ...values, [key]: value });
   };
 
@@ -34,7 +34,7 @@ const RegisterFormContainer = () => {
           onSubmit={onSubmit}
           formErrors={{ register, handleSubmit, errors }}
           handleOnChange={handleOnChange}
-          handleMask={handleMask}
+          applyMask={applyMask}
         />
       </div>
     </FormWrapper>

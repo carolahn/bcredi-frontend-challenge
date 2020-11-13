@@ -44,20 +44,27 @@ export const StyledForm = styled.form`
 
 export const StyledInput = styled.input`
   height: 48px;
-  width: 320px;
+  /* width: 320px; */
+  width: ${(props) => props.width};
   margin: 7px auto 5px auto;
   border-radius: 3px;
   padding-left: 14px;
   outline: none;
-  appearance: none;
+
+  &:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
 `;
 
-export const StyledInputSmall = styled.input`
-  height: 48px;
-  width: 148px;
-  margin: 7px auto 5px auto;
-  border-radius: 3px;
-  padding-left: 14px;
-  outline: none;
-  appearance: none;
-`;
+// export const StyledInputSmall = styled.input`
+//   height: 48px;
+//   width: 148px;
+//   margin: 7px auto 5px auto;
+//   border-radius: 3px;
+//   padding-left: 14px;
+//   outline: none;
+//   appearance: none;
+// `;

@@ -72,3 +72,15 @@ export const FormWrapper = styled.div`
     width: 100vw;
   }
 `;
+
+export const ConfirmationMessage = styled.div`
+  width: 56.87vw;
+  height: 64px;
+  padding-top: 20px;
+  background-color: #2ecc71;
+  position: absolute;
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+`;

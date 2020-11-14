@@ -1,16 +1,32 @@
 import { useForm } from "react-hook-form";
-import { useState } from "react";
-import { FormWrapper } from "./styled";
+import { useEffect, useState } from "react";
+import { ConfirmationMessage, FormWrapper } from "./styled";
 import RegisterForm from "../../components/register-form";
 
 const RegisterFormContainer = () => {
   const [values, setValues] = useState({});
   const [showPassword, setShowPassword] = useState(false);
-  const { handleSubmit, register, errors } = useForm();
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const { handleSubmit, register, errors, reset } = useForm();
+
+  const defaultValues = {
+    email: "",
+    cpf: "",
+    birth: "",
+    password: "",
+  };
 
   const onSubmit = (values) => {
     console.log(values);
+    setShowConfirmation(true);
+    // reset(defaultValues);
+    setTimeout(() => setShowConfirmation(false), 3000);
   };
+
+  useEffect(() => {
+    reset(defaultValues);
+    setValues(defaultValues);
+  }, [showConfirmation]);
 
   const handleOnChange = ({ target: { name, value } }) => {
     setValues({ ...values, [name]: value });
@@ -26,6 +42,12 @@ const RegisterFormContainer = () => {
 
   return (
     <FormWrapper className="form">
+      {showConfirmation && (
+        <ConfirmationMessage>
+          Parabéns! Cadastro realizado com sucesso!
+        </ConfirmationMessage>
+      )}
+
       <div className="form__container">
         <div className="form__title">Criar meu cadastro</div>
         <div className="form__text">

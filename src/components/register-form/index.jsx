@@ -97,7 +97,7 @@ const RegisterForm = ({
           <StyledInput
             width="148px"
             className="register__input--small"
-            placeholder="dd/mm/aaaa"
+            placeholder="DD/MM/AAAA"
             maxLength={10}
             name="birth"
             value={values.birth}

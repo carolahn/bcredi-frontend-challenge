@@ -110,8 +110,28 @@ Here you should write what are all of the configurations a user can enter when u
 Describe and show how to run the tests with code examples.
 Explain what these tests test and why.
 
+- Jest
+
 ```shell
-Give an example
+yarn add --dev react-test-renderer
+yarn test
+```
+
+- Enzyme
+
+```shell
+yarn add --dev enzyme enzyme-adapter-react-16
+```
+
+adapter (setupTests.js)
+
+```shell
+import "@testing-library/jest-dom/extend-expect";
+
+import Enzyme from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+
+Enzyme.configure({ adapter: new Adapter() });
 ```
 
 ## Style guide

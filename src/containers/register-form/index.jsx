@@ -1,13 +1,18 @@
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { ConfirmationMessage, FormWrapper } from "./styled";
 import RegisterForm from "../../components/register-form";
+import { saveUserInfo } from "../../redux/actions/user";
 
 const RegisterFormContainer = () => {
   const [values, setValues] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const { handleSubmit, register, errors, reset } = useForm();
+  const bcrypt = require("bcryptjs");
+  const dispatch = useDispatch();
+  const user_info = useSelector((state) => state.user.user);
 
   const defaultValues = {
     email: "",
@@ -17,7 +22,9 @@ const RegisterFormContainer = () => {
   };
 
   const onSubmit = (values) => {
+    values.password = bcrypt.hashSync(values.password, 10);
     console.log(values);
+    dispatch(saveUserInfo(values));
     setShowConfirmation(true);
     setTimeout(() => setShowConfirmation(false), 3000);
   };
@@ -38,6 +45,8 @@ const RegisterFormContainer = () => {
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
+
+  console.log(user_info);
 
   return (
     <FormWrapper className="form">

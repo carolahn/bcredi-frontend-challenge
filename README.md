@@ -28,6 +28,9 @@ Installs the necessary dependencies and runs the application
 - styled-components (5.2.1)
 - react-hook-form (6.11.0)
 - fontawesome (1.2.32)
+- bcriptjs (2.4.3)
+- redux (4.0.5)
+- react-redux (7.2.2)
 
 ### Prerequisites
 
@@ -63,6 +66,24 @@ make install
 
 Here again you should state what actually happens when the code above gets
 executed.
+
+#### Get user info from store
+
+```shell
+import { useSelector } from "react-redux";
+const user_info = useSelector((state) => state.user.user);
+console.log(user_info);
+```
+
+#### Authenticate user password
+
+```shell
+const bcrypt = require('bcryptjs')
+password = "123456789"
+passwordHash = "$2a$10$MKX7CF1nsVQmrbiZGbWnlOyln8wR7UjyEQ79IOo9qu8rjNuqkbYEm"
+bcrypt.compareSync(password, passwordHash)
+// return true
+```
 
 ### Deploying / Publishing
 

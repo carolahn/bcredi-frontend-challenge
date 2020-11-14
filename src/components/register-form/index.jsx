@@ -7,7 +7,7 @@ import {
   StyledButton,
 } from "./styled";
 import { cpfMask, birthMask } from "./masks";
-import { birthValidator } from "./validator";
+import { birthValidator, cpfValidator } from "./validator";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faLock } from "@fortawesome/free-solid-svg-icons";
@@ -71,11 +71,7 @@ const RegisterForm = ({
                 },
                 pattern: (value) => {
                   applyMask(value, "cpf");
-                  return (
-                    value.match(
-                      /(^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$)|(^\d{2}\.?\d{3}\.?\d{3}\/\d{4}-?\d{2}$)/i
-                    ) || "CPF inválido"
-                  );
+                  return cpfValidator(value) || "CPF inválido";
                 },
               },
             })}

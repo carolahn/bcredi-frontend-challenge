@@ -1,19 +1,15 @@
 import styled from "styled-components";
 
 export const FormWrapper = styled.div`
-  /* background-color: blue; */
   width: 56.87vw;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   min-height: 760px;
 
   .form__container {
     width: 320px;
     margin-top: 94px;
-    /* height: 100vh; */
-    /* background-color: yellow; */
   }
 
   .form__title {
@@ -55,9 +51,6 @@ export const FormWrapper = styled.div`
     text-decoration: none;
   }
   @media (max-height: 760px) {
-    /* position: unset;
-    display: flex;
-    flex-direction: column; */
     .form__footer--min-height {
       position: relative;
     }

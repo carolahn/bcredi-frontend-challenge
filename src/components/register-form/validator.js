@@ -1,9 +1,7 @@
 // checks if the date of birth is in the future,
 // the number of days according to month
-
-import { parse } from "@fortawesome/fontawesome-svg-core";
-
 // and leap years
+
 export const birthValidator = (birth) => {
   let birthDay = parseInt(birth.slice(0, 2));
   let birthMonth = parseInt(birth.slice(3, 5));
@@ -46,10 +44,10 @@ const cpfChecker = (cpf) => {
     remainder = (sum * 10) % 11;
   }
 
-  if (remainder == 10 || remainder == 11) {
+  if (remainder === 10 || remainder === 11) {
     remainder = 0;
   }
-  if (remainder != parseInt(cpf.substring(9, 10))) {
+  if (remainder !== parseInt(cpf.substring(9, 10))) {
     return false;
   }
 
@@ -60,10 +58,10 @@ const cpfChecker = (cpf) => {
     remainder = (sum * 10) % 11;
   }
 
-  if (remainder == 10 || remainder == 11) {
+  if (remainder === 10 || remainder === 11) {
     remainder = 0;
   }
-  if (remainder != parseInt(cpf.substring(10, 11))) {
+  if (remainder !== parseInt(cpf.substring(10, 11))) {
     return false;
   }
 

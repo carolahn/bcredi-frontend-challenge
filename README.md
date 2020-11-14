@@ -1,34 +1,38 @@
-<img src="./images/logo.sample.png" alt="Logo of the project" align="right">
+<img src="./src/assets/images/bcredi-logo.svg" alt="Logo of the project" align="right">
 
 # Bcredi Frontend Challenge &middot; [![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
 
-> Additional information or tag line
+> Registry page - test for Front-end Developer
 
-A brief description of your project, what it is used for.
+Project developed as part of Bcredi's selection process.
+It is a user registration page.
+
+As a user, the page allows you to register your e-mail, CPF, date of birth and password.
+The input data is validated and it is not allowed to register e-mail in adverse format, invalid CPF, future or non-existent date of birth and password with less than 8 digits.
+After validation, a message confirms the registration and the data is stored (state values) and printed on the console.
 
 ## Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up &
-running.
-
 ```shell
-commands here
+yarn install
+yarn start
 ```
 
-Here you should say what actually happens when you execute the code above.
+Installs the necessary dependencies and runs the application
 
 ## Developing
 
 ### Built With
 
-List main libraries, frameworks used including versions (React, Angular etc...)
-
-- React (16.8.0)
-- Styled-components (5.2.1)
-- React-hook-form (6.11.0)
+- react (16.8.0)
+- styled-components (5.2.1)
+- react-hook-form (6.11.0)
 - fontawesome (1.2.32)
 
 ### Prerequisites
+
+- [Node.js](https://nodejs.org/en/)
+- [React](https://pt-br.reactjs.org/)
 
 What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
 
@@ -38,12 +42,13 @@ Here's a brief intro about what a developer must do in order to start developing
 the project further:
 
 ```shell
-git clone https://github.com/your/your-project.git
-cd your-project/
-packagemanager install
+git clone git@github.com:carolahn/bcredi-frontend-challenge.git
+cd bcredi-frontend-challenge/
+yarn install
+yarn start
 ```
 
-And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here.
+Runs the application on localhost: 3000.
 
 ### Building
 

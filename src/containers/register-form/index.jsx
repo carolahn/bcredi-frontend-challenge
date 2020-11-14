@@ -19,7 +19,6 @@ const RegisterFormContainer = () => {
   const onSubmit = (values) => {
     console.log(values);
     setShowConfirmation(true);
-    // reset(defaultValues);
     setTimeout(() => setShowConfirmation(false), 3000);
   };
 

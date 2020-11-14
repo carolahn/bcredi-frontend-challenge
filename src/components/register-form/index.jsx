@@ -1,7 +1,6 @@
 import {
   StyledForm,
   StyledInput,
-  StyledInputSmall,
   StyledMessage,
   CheckboxContainer,
   StyledButton,

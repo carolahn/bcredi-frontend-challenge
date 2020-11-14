@@ -15,10 +15,11 @@ export const Header = styled.div`
   top: 16px;
 
   @media (max-width: 600px) {
+    top: 0px;
     width: 100vw;
     height: 64px;
     right: 0px;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-right: 32px;
     background-repeat: no-repeat;
     background-position-x: right;

@@ -70,6 +70,7 @@ export const FormWrapper = styled.div`
 
   @media (max-width: 600px) {
     width: 100vw;
+    height: 64px;
   }
 `;
 
@@ -83,4 +84,8 @@ export const ConfirmationMessage = styled.div`
   text-align: center;
   font-size: 16px;
   line-height: 24px;
+
+  @media (max-width: 600px) {
+    width: 100vw;
+  }
 `;

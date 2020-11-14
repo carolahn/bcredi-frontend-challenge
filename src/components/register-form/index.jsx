@@ -7,6 +7,7 @@ import {
   StyledButton,
 } from "./styled";
 import { cpfMask, birthMask } from "./masks";
+import { birthValidator } from "./validator";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faLock } from "@fortawesome/free-solid-svg-icons";
@@ -112,11 +113,7 @@ const RegisterForm = ({
                 },
                 pattern: (value) => {
                   applyMask(value, "birth");
-                  return (
-                    value.match(
-                      /(^(((0[1-9]|[12][0-9]|30)[-/]?(0[13-9]|1[012])|31[-/]?(0[13578]|1[02])|(0[1-9]|1[0-9]|2[0-8])[-/]?02)[-/]?[0-9]{4}|29[-/]?02[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$)/i
-                    ) || "Data inválida"
-                  );
+                  return birthValidator(value) || "Data inválida";
                 },
               },
             })}
@@ -198,8 +195,17 @@ const RegisterForm = ({
         />
         <span className="register__checkbox-label">
           Li e estou de acordo com a{" "}
-          <a href="#politica-de-privacidade">Política de Privacidade</a> e a{" "}
-          <a href="#politica-de-uso">Política de Uso de Informações</a>.
+          <a
+            href="#politica-de-privacidade"
+            title="Política de privacidade da Bcredi"
+          >
+            Política de Privacidade
+          </a>{" "}
+          e a{" "}
+          <a href="#politica-de-uso" title="Política de uso da Bcredi">
+            Política de Uso de Informações
+          </a>
+          .
         </span>
         {errors.agree && (
           <StyledMessage className="register__message" top="59px" left="-1px">

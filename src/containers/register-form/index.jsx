@@ -4,15 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { ConfirmationMessage, FormWrapper } from "./styled";
 import RegisterForm from "../../components/register-form";
 import { saveUserInfo } from "../../redux/actions/user";
+import bcrypt from "bcryptjs";
 
 const RegisterFormContainer = () => {
   const [values, setValues] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const { handleSubmit, register, errors, reset } = useForm();
-  const bcrypt = require("bcryptjs");
   const dispatch = useDispatch();
-  const user_info = useSelector((state) => state.user.user);
+  const userInfo = useSelector((state) => state.user.user);
 
   const defaultValues = {
     email: "",
@@ -25,19 +25,15 @@ const RegisterFormContainer = () => {
     values.password = bcrypt.hashSync(values.password, 10);
     dispatch(saveUserInfo(values));
     setShowConfirmation(true);
+    reset(defaultValues);
+    setValues(defaultValues);
     setTimeout(() => setShowConfirmation(false), 3000);
   };
 
   useEffect(() => {
-    reset(defaultValues);
-    setValues(defaultValues);
-    // eslint-disable-next-line
-  }, [showConfirmation]);
-
-  useEffect(() => {
     console.log("Registry data from state.user.user:");
-    console.log(user_info);
-  }, [user_info]);
+    console.log(userInfo);
+  }, [userInfo]);
 
   const handleOnChange = ({ target: { name, value } }) => {
     setValues({ ...values, [name]: value });

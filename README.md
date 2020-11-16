@@ -80,6 +80,9 @@ bcredi-frontend-challenge/
   public/
   .gitignore
   yarn.lock
+  cypress/
+    integration/
+      register.spec.js
   src/
     App.css
     App.js

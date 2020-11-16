@@ -12,7 +12,7 @@ jest.mock("react-hook-form", () => ({
   }),
 }));
 
-describe("Render Test", () => {
+describe("register-form render test", () => {
   it("renders correctly RegisterForm", () => {
     const tree = renderer
       .create(

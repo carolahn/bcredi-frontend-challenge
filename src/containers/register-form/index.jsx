@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ConfirmationMessage, FormWrapper } from "./styled";
 import RegisterForm from "../../components/register-form";
@@ -23,7 +23,6 @@ const RegisterFormContainer = () => {
 
   const onSubmit = (values) => {
     values.password = bcrypt.hashSync(values.password, 10);
-    console.log(values);
     dispatch(saveUserInfo(values));
     setShowConfirmation(true);
     setTimeout(() => setShowConfirmation(false), 3000);
@@ -32,7 +31,13 @@ const RegisterFormContainer = () => {
   useEffect(() => {
     reset(defaultValues);
     setValues(defaultValues);
+    // eslint-disable-next-line
   }, [showConfirmation]);
+
+  useEffect(() => {
+    console.log("Registry data from state.user.user:");
+    console.log(user_info);
+  }, [user_info]);
 
   const handleOnChange = ({ target: { name, value } }) => {
     setValues({ ...values, [name]: value });
@@ -45,8 +50,6 @@ const RegisterFormContainer = () => {
   const togglePassword = () => {
     setShowPassword(!showPassword);
   };
-
-  console.log(user_info);
 
   return (
     <FormWrapper className="form">

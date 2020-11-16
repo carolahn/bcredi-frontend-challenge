@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render Test renders correctly RegisterForm 1`] = `
+exports[`register-form render test renders correctly RegisterForm 1`] = `
 <form
   className="sc-bdfBwQ gBrTql"
   name="register"

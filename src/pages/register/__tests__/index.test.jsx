@@ -5,7 +5,7 @@ import Register from "../index";
 import RegisterContainer from "../../../containers/register-form";
 import Banner from "../../../components/banner";
 
-describe("Render Test", () => {
+describe("register page render test", () => {
   it("renders Register with RegisterContainer", () => {
     const wrapper = shallow(<Register />);
     expect(wrapper.find(RegisterContainer)).toBeTruthy();

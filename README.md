@@ -18,7 +18,7 @@ yarn install
 yarn start
 ```
 
-Installs the necessary dependencies and runs the application
+Installs the necessary dependencies and runs the application.
 
 ## Developing
 
@@ -37,12 +37,9 @@ Installs the necessary dependencies and runs the application
 - [Node.js](https://nodejs.org/en/)
 - [React](https://pt-br.reactjs.org/)
 
-What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
-
 ### Setting up Dev
 
-Here's a brief intro about what a developer must do in order to start developing
-the project further:
+To start developing the project:
 
 ```shell
 git clone git@github.com:carolahn/bcredi-frontend-challenge.git
@@ -53,21 +50,7 @@ yarn start
 
 Runs the application on localhost: 3000.
 
-### Building
-
-If your project needs some additional steps for the developer to build the
-project after some code changes, state them here. for example:
-
-```shell
-./configure
-make
-make install
-```
-
-Here again you should state what actually happens when the code above gets
-executed.
-
-#### Get user info from store
+### Get user info from redux store
 
 ```shell
 import { useSelector } from "react-redux";
@@ -75,7 +58,7 @@ const user_info = useSelector((state) => state.user.user);
 console.log(user_info);
 ```
 
-#### Authenticate user password
+### Authenticate user password
 
 ```shell
 const bcrypt = require('bcryptjs')
@@ -84,26 +67,6 @@ passwordHash = "$2a$10$MKX7CF1nsVQmrbiZGbWnlOyln8wR7UjyEQ79IOo9qu8rjNuqkbYEm"
 bcrypt.compareSync(password, passwordHash)
 // return true
 ```
-
-### Deploying / Publishing
-
-give instructions on how to build and release a new version
-In case there's some step you have to take that publishes this project to a
-server, this is the right time to state it.
-
-```shell
-packagemanager deploy your-project -s server.com -u username -p password
-```
-
-And again you'd need to tell what the previous code actually does.
-
-## Versioning
-
-We can maybe use [SemVer](http://semver.org/) for versioning. For the versions available, see the [link to tags on this repository](/tags).
-
-## Configuration
-
-Here you should write what are all of the configurations a user can enter when using the project.
 
 ## Tests
 
@@ -136,19 +99,4 @@ Enzyme.configure({ adapter: new Adapter() });
 
 ## Style guide
 
-Explain your code style and show how to check it.
-
 - BEM - Block Element Modifier rules
-
-## Api Reference
-
-If the api is external, link to api documentation. If not describe your api including authentication methods as well as explaining all the endpoints with their required parameters.
-
-## Database
-
-Explaining what database (and version) has been used. Provide download links.
-Documents your database design and schemas, relations etc...
-
-## Licensing
-
-State what the license is and how to find the text version of the license.

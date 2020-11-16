@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render Test renders correctly Banner 1`] = `
+exports[`banner render test renders correctly Banner 1`] = `
 <div
   className="sc-bdfBwQ hkoKkK banner"
 >

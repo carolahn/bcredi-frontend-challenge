@@ -13,12 +13,32 @@ After validation, a message confirms the registration and the data is stored (st
 
 ## Installing / Getting started
 
+Installing the necessary dependencies and runs the application:
+
 ```shell
 yarn install
 yarn start
 ```
 
-Installs the necessary dependencies and runs the application.
+Using the Register page:
+
+```shell
+import Register from <register-path>
+
+const App = () => {
+  return (
+    <Register />
+  );
+}
+export default App;
+
+```
+
+To visit App:
+
+```shell
+localhost:3000
+```
 
 ## Developing
 
@@ -49,6 +69,39 @@ yarn start
 ```
 
 Runs the application on localhost: 3000.
+
+### Folder Structure
+
+```shell
+bcredi-frontend-challenge/
+  README.md
+  node_modules/
+  package.json
+  public/
+  .gitignore
+  yarn.lock
+  src/
+    App.css
+    App.js
+    index.css
+    index.js
+    logo.svg
+    reportWebVitals.js
+    setupTests.js
+    assets/
+      images/
+    components/
+      banner/
+      register-form/
+    containers/
+      register-form/
+    pages/
+      register
+    redux/
+      actions/
+      reducers/
+      store/
+```
 
 ### Get user info from redux store
 
@@ -95,6 +148,13 @@ import Enzyme from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
 Enzyme.configure({ adapter: new Adapter() });
+```
+
+- Cypress(5.6.0)
+
+```shell
+yarn add --dev cypress
+yarn run cypress open
 ```
 
 ## Style guide

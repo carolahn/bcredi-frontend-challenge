@@ -4,8 +4,14 @@ import { shallow } from "enzyme";
 import Register from "../index";
 import RegisterContainer from "../../../containers/register-form";
 import Banner from "../../../components/banner";
+import { Header } from "../styled";
 
 describe("register page render test", () => {
+  it("renders Register with Header", () => {
+    const wrapper = shallow(<Register />);
+    expect(wrapper.find(Header)).toBeTruthy();
+  });
+
   it("renders Register with RegisterContainer", () => {
     const wrapper = shallow(<Register />);
     expect(wrapper.find(RegisterContainer)).toBeTruthy();

@@ -9,15 +9,15 @@ It is a user registration page.
 
 As a user, the page allows you to register your e-mail, CPF, date of birth and password.
 The input data is validated and it is not allowed to register e-mail in adverse format, invalid CPF, future or non-existent date of birth and password with less than 8 digits.
-After validation, a message confirms the registration and the data is stored (state values) and printed on the console.
+After validation, a message confirms the registration and the data is stored (at state values and at redux store - state.user.user) and printed on the console.
 
 ## Installing / Getting started
 
 Installing the necessary dependencies and runs the application:
 
 ```shell
-yarn install
-yarn start
+$ yarn install
+$ yarn start
 ```
 
 Using the Register page:
@@ -62,10 +62,10 @@ localhost:3000
 To start developing the project:
 
 ```shell
-git clone git@github.com:carolahn/bcredi-frontend-challenge.git
-cd bcredi-frontend-challenge/
-yarn install
-yarn start
+$ git clone git@github.com:carolahn/bcredi-frontend-challenge.git
+$ cd bcredi-frontend-challenge/
+$ yarn install
+$ yarn start
 ```
 
 Runs the application on localhost: 3000.
@@ -95,6 +95,13 @@ bcredi-frontend-challenge/
       images/
     components/
       banner/
+      birth-input/
+      checkbox-input/
+      cpf-input/
+      email-input/
+      password-input/
+      register-button/
+      register-footer/
       register-form/
     containers/
       register-form/
@@ -110,11 +117,11 @@ bcredi-frontend-challenge/
 
 ```shell
 import { useSelector } from "react-redux";
-const user_info = useSelector((state) => state.user.user);
-console.log(user_info);
+const userInfo = useSelector((state) => state.user.user);
+console.log(userInfo);
 ```
 
-### Authenticate user password
+### Authenticate user password with bcryptjs
 
 ```shell
 const bcrypt = require('bcryptjs')
@@ -126,20 +133,17 @@ bcrypt.compareSync(password, passwordHash)
 
 ## Tests
 
-Describe and show how to run the tests with code examples.
-Explain what these tests test and why.
-
 - Jest
 
 ```shell
-yarn add --dev react-test-renderer
-yarn test
+$ yarn add --dev react-test-renderer
+$ yarn test
 ```
 
 - Enzyme
 
 ```shell
-yarn add --dev enzyme enzyme-adapter-react-16
+$ yarn add --dev enzyme enzyme-adapter-react-16
 ```
 
 adapter (setupTests.js)
@@ -153,13 +157,23 @@ import Adapter from "enzyme-adapter-react-16";
 Enzyme.configure({ adapter: new Adapter() });
 ```
 
+```shell
+$ yarn test
+```
+
 - Cypress(5.6.0)
 
 ```shell
-yarn add --dev cypress
-yarn run cypress open
+$ yarn add --dev cypress
+$ yarn run cypress open
 ```
+
+Select "register.spec.js" to watch the tests running.
 
 ## Style guide
 
 - BEM - Block Element Modifier rules
+
+## License
+
+MIT licensed.

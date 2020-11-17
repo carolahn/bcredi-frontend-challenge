@@ -1,7 +1,10 @@
-import React from "react";
-import { shallow } from "enzyme";
+import React, { useState } from "react";
+import Enzyme, { shallow, mount } from "enzyme";
 import RegisterFormContainer from "../index";
 import RegisterForm from "../../../components/register-form";
+import RegisterFooter from "../../../components/register-footer";
+import { ConfirmationMessage } from "../styled";
+import { useDispatch } from "react-redux";
 
 jest.mock("react-hook-form", () => ({
   useForm: () => ({
@@ -35,5 +38,15 @@ describe("Render Test", () => {
   it("renders correctly RegisterFormContainer", () => {
     const wrapper = shallow(<RegisterFormContainer />);
     expect(wrapper.find(RegisterForm)).toBeTruthy();
+  });
+
+  it("renders correctly RegisterFooter", () => {
+    const wrapper = shallow(<RegisterFormContainer />);
+    expect(wrapper.find(RegisterFooter)).toBeTruthy();
+  });
+
+  it("renders correctly ConfirmationMessage", () => {
+    const wrapper = shallow(<RegisterFormContainer />);
+    expect(wrapper.find(ConfirmationMessage)).toBeTruthy();
   });
 });

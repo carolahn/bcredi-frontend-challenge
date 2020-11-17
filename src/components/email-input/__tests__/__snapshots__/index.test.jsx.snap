@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailInput render test renders correctly EmailInput 1`] = `
+<div
+  className="register__input-wrapper"
+>
+  <label
+    className="register__label"
+  >
+    E-mail
+  </label>
+  <input
+    className="sc-gsTCUz fKZdNo register__input"
+    name="email"
+    placeholder="exemplo@email.com"
+    style={
+      Object {
+        "border": "1px solid #e6e6e6",
+        "color": "#333333",
+      }
+    }
+    width="320px"
+  />
+</div>
+`;

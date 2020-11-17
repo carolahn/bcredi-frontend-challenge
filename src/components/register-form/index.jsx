@@ -1,13 +1,10 @@
-import { StyledForm, StyledButton } from "./styled";
+import { StyledForm } from "./styled";
 import EmailInput from "../email-input";
 import CpfInput from "../cpf-input";
 import BirthInput from "../birth-input";
 import PasswordInput from "../password-input";
 import CheckboxInput from "../checkbox-input";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLock } from "@fortawesome/free-solid-svg-icons";
-const lock = <FontAwesomeIcon icon={faLock} />;
+import RegisterButton from "../register-button";
 
 const RegisterForm = ({
   values,
@@ -59,9 +56,7 @@ const RegisterForm = ({
         values={values}
       />
 
-      <StyledButton>
-        <i className="register__icon--lock">{lock}</i>Cadastrar
-      </StyledButton>
+      <RegisterButton />
     </StyledForm>
   );
 };

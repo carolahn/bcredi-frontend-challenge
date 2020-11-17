@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CpfInput render test renders correctly CpfInput 1`] = `
+<div
+  className="register__small-input-container"
+>
+  <label
+    className="register__label register__label--small"
+  >
+    CPF
+  </label>
+  <input
+    className="sc-gsTCUz iyuuZk register__input--small"
+    maxLength={18}
+    name="cpf"
+    onChange={[Function]}
+    placeholder="000.000.000-00"
+    style={
+      Object {
+        "border": "1px solid #e6e6e6",
+        "color": "#333333",
+      }
+    }
+    width="148px"
+  />
+</div>
+`;

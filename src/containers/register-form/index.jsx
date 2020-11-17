@@ -5,6 +5,7 @@ import { ConfirmationMessage, FormWrapper } from "./styled";
 import RegisterForm from "../../components/register-form";
 import { saveUserInfo } from "../../redux/actions/user";
 import bcrypt from "bcryptjs";
+import RegisterFooter from "../../components/register-footer";
 
 const RegisterFormContainer = () => {
   const [values, setValues] = useState({});
@@ -73,13 +74,7 @@ const RegisterFormContainer = () => {
           showPassword={showPassword}
         />
       </div>
-      <div className="form__footer--min-height">
-        <div className="form__footer">
-          <p>
-            Já fiz o meu cadastro. <a href="#entrar">Entrar agora.</a>
-          </p>
-        </div>
-      </div>
+      <RegisterFooter />
     </FormWrapper>
   );
 };

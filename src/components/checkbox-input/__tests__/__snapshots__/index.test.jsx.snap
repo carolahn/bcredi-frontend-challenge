@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxInput render test renders correctly CheckboxInput 1`] = `
+<div
+  className="sc-hKgILt eoiDfF"
+  style={
+    Object {
+      "border": "1px solid #e6e6e6",
+    }
+  }
+>
+  <input
+    className="register__input--checkbox"
+    name="agree"
+    style={
+      Object {
+        "border": "1px solid #e6e6e6",
+        "color": "#333333",
+      }
+    }
+    type="checkbox"
+    width="320px"
+  />
+  <span
+    className="register__checkbox-label"
+  >
+    Li e estou de acordo com a
+     
+    <a
+      href="#politica-de-privacidade"
+      title="Política de privacidade da Bcredi"
+    >
+      Política de Privacidade
+    </a>
+     
+    e a
+     
+    <a
+      href="#politica-de-uso"
+      title="Política de uso da Bcredi"
+    >
+      Política de Uso de Informações
+    </a>
+    .
+  </span>
+</div>
+`;

@@ -171,7 +171,7 @@ exports[`register-form render test renders correctly RegisterForm 1`] = `
     </span>
   </div>
   <button
-    className="sc-eCssSg gYctEH"
+    className="sc-eCssSg gYctEH register__button"
   >
     <i
       className="register__icon--lock"

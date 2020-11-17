@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegisterFooter render test renders correctly RegisterFooter 1`] = `
+<div
+  className="form__footer--min-height"
+>
+  <div
+    className="form__footer"
+  >
+    <p>
+      Já fiz o meu cadastro. 
+      <a
+        href="#entrar"
+      >
+        Entrar agora.
+      </a>
+    </p>
+  </div>
+</div>
+`;

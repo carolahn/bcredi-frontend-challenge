@@ -11,6 +11,10 @@ As a user, the page allows you to register your e-mail, CPF, date of birth and p
 The input data is validated and it is not allowed to register e-mail in adverse format, invalid CPF, future or non-existent date of birth and password with less than 8 digits.
 After validation, a message confirms the registration and the data is stored (at state values and at redux store - state.user.user) and printed on the console.
 
+## Deploy
+
+https://bcredi-frontend-challenge-carolina-ahn.vercel.app/
+
 ## Installing / Getting started
 
 Installing the necessary dependencies and runs the application:

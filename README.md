@@ -74,6 +74,10 @@ $ yarn start
 
 Runs the application on localhost: 3000.
 
+### Deploying
+
+- [Vercel deploy](https://bcredi-frontend-challenge-carolina-ahn.vercel.app/)
+
 ### Folder Structure
 
 ```shell
